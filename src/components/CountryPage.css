@@ -1,0 +1,307 @@
+/* Import Playfair Display Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400&display=swap');
+
+/* Global Styles */
+.country-page {
+    font-family: 'Lora', sans-serif;
+    padding: 40px; /* Increased padding for whitespace */
+    background-color: #f4f4f4; 
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem; /* Increased font size for emphasis */
+    margin-bottom: 30px; /* Increased space below */
+    color: #1A1A2E; /* A deeper blue color for warmth */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+h2 {
+    font-family: 'Playfair Display', serif; 
+    font-size: 2.5rem; /* Enhanced font size */
+    margin-top: 0;
+    color: #333; /* Darker color for headings */
+    text-decoration: underline; /* Add emphasis with underline */
+}
+
+h3 {
+    font-family: 'Playfair Display', serif; 
+    font-size: 2rem; /* Increased font size */
+    margin-top: 20px; /* More spacing for separation */
+    color: #555; /* Softer color for subheadings */
+}
+
+p {
+    font-size: 1.1rem; /* Slightly larger font */
+    line-height: 1.8; /* Increased line height for readability */
+    margin-bottom: 20px; 
+    color: #444; /* Dark color for better contrast */
+}
+
+/* Service Container Styles */
+.service-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px; /* More spacing */
+    animation: slideDown 0.5s ease forwards; /* Animation */
+}
+
+.normal {
+    flex-direction: row; /* Text left, image right for normal */
+}
+
+.reverse {
+    flex-direction: row-reverse; /* Image left, text right for reverse */
+}
+
+.content-left {
+    flex: 1;
+    padding: 30px; /* Increased padding for content */
+    background-color: white;
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth animation for transform */
+}
+
+.content-left:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.images-right {
+    flex: 1;
+    display: flex;
+    align-items: center; /* Center image vertically */
+    margin-left: 30px; 
+}
+
+.service-image {
+    width: 100%;
+    height: auto;
+    max-height: 350px; /* Controlled height for the images */
+    border-radius: 20px; /* More rounded corners */
+    object-fit: cover; /* Cover to maintain aspect ratio */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth animation */
+}
+
+.service-image:hover {
+    transform: scale(1.1); /* Increased scale on hover */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25); /* Shadow effect on hover */
+}
+
+/* Background Image Section Styles */
+.background-section {
+    background-size: cover; 
+    padding: 120px 20px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF; /* White text */
+    position: relative;
+    margin-top: 40px; 
+}
+
+/* Unique Philosophy Section Styles */
+.philosophy-section {
+    position: absolute; /* Change to absolute positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the element */
+    text-align: center; /* Center text */
+    z-index: 10; /* Ensures it's above other content */
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for better contrast */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Padding for the section */
+}
+
+.philosophy-section h2 {
+    font-size: 3rem; /* Emphasized title size */
+    margin-bottom: 20px; /* Space below title */
+    color: #FF7F50; /* Coral color for warmth */
+}
+
+.philosophy-section p {
+    font-size: 1.2rem; /* Increased paragraph font size */
+    color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+}
+
+/* Luxury Services Styles */
+.luxury-services {
+    margin-top: 60px; /* Increased margin for separation */
+}
+
+.luxury-images {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.luxury-service-box {
+    flex: 1 1 280px; /* Responsive flexbox layout */
+    margin: 20px; /* Increased margin */
+    padding: 25px; /* Enhanced padding */
+    background: rgba(255, 255, 255, 0.9); /* Slightly more opaque background */
+    text-align: center;
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Animation */
+}
+
+.luxury-service-box:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35); /* Deeper shadow effect on hover */
+}
+
+.luxury-image {
+    width: 100%; /* Ensures image takes full width */
+    max-height: 250px; /* Controlled height for luxury images */
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover; /* Maintain aspect ratio */
+    transition: transform 0.3s ease;
+}
+
+.luxury-image:hover {
+    transform: scale(1.1);
+}
+
+/* See More Button Styles */
+.see-more {
+    text-align: center;
+    margin-top: 40px; 
+}
+
+.see-more-button {
+    padding: 14px 28px; /* Increased padding */
+    background-color: #1A1A2E; /* Darker blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.1rem; /* Larger font size */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.see-more-button:hover {
+    background-color: #FF7F50; /* Coral color for a fresh look */
+    transform: scale(1.05); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* Shadow effect on hover */
+}
+
+/* Wellness Videos Section Styles */
+.wellness-videos {
+    margin-top: 60px; /* Increased margin */
+}
+
+.video-gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.video-box {
+    flex: 1 1 300px; 
+    margin: 20px; /* Increased margin */
+    background: white;
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 15px; 
+    text-align: center;
+    transition: transform 0.3s ease; /* Apply transition */
+}
+
+.video-box:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.video-embed {
+    width: 100%;
+    height: 220px; /* Adjusted height for embedded videos */
+    border-radius: 20px; /* Rounded corners for videos */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.5rem; /* Adjusted font size for tablets */
+    }
+
+    h2 {
+        font-size: 2rem; /* Adjusted font size for tablets */
+    }
+
+    h3 {
+        font-size: 1.8rem; /* Adjusted font size for tablets */
+    }
+
+    p {
+        font-size: 1rem; /* Adjusted paragraph font size for tablets */
+    }
+
+    .service-container {
+        flex-direction: column; /* Stack the service sections vertically */
+    }
+
+    .content-left, .images-right {
+        margin-left: 0; /* Remove margin-left */
+        margin-bottom: 30px; /* More space below */
+    }
+}
+
+@media (max-width: 768px) {
+    .country-page {
+        padding: 20px; /* Reduced padding */
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjusted font size for mobile */
+    }
+
+    h2 {
+        font-size: 1.8rem; /* Adjusted font size for mobile */
+    }
+
+    h3 {
+        font-size: 1.5rem; /* Adjusted font size for mobile */
+    }
+
+    p {
+        font-size: 0.9rem; /* Adjusted paragraph font size for mobile */
+    }
+
+    .luxury-service-box {
+        flex: 1 1 100%; /* Full width for boxes */
+        margin: 10px 0; /* Reduced margins */
+    }
+
+    .video-box {
+        flex: 1 1 100%; /* Full width for video boxes */
+        margin: 10px 0; /* Reduced margins */
+    }
+
+    .wellness-services {
+        flex-direction: column; 
+    }
+
+    .background-section {
+        padding: 60px 10px; /* Reduced padding */
+    }
+
+    .philosophy-section {
+        padding: 15px; /* Reduced padding */
+    }
+}
+
+/* Animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px); /* More dramatic entrance */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
