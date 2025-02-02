@@ -327,22 +327,34 @@ const styles = {
   },
   countryList: {
     width: "100%",
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    padding: "10px",
   },
   countryItem: {
     padding: "10px",
     cursor: "pointer",
     borderBottom: "1px solid #ddd",
     position: "relative",
+    flexBasis: "20%",
+    textAlign: "center",
+    margin: "10px",
+    backgroundColor: "#f8f8f8",
+    borderRadius: "10px",
   },
   countryName: {
     fontSize: "20px",
     fontWeight: "bold",
     color: "#001F3F",
     cursor: "pointer",
+    margin: "10px 0",
   },
   resortList: {
     marginTop: "10px",
-    marginLeft: "20px",
+    marginLeft: "0",
+    textAlign: "left",
+    display: "block",
   },
   resortItem: {
     display: "block",
@@ -350,6 +362,7 @@ const styles = {
     color: "#001F3F",
     textDecoration: "none",
     animation: "fadeIn 0.5s ease",
+    fontSize: "18px",
   },
   overlayText: {
     position: "absolute",
@@ -366,6 +379,7 @@ const styles = {
     fontSize: "2rem",
     fontWeight: "bold",
     color: "#fff",
+    marginBottom: "10px",
   },
   overlayParagraph: {
     fontSize: "1.2rem",
@@ -382,6 +396,7 @@ const styles = {
     fontSize: "2rem",
     fontWeight: "bold",
     color: "#fff",
+    marginBottom: "10px",
   },
   countryOverlayParagraph: {
     fontSize: "1.2rem",
