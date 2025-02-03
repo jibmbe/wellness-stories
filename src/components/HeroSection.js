@@ -1,36 +1,38 @@
 import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Carousel CSS
+import { useNavigate } from 'react-router-dom';  // Updated import
 
 const HeroSection = () => {
+  const navigate = useNavigate();  // Use useNavigate instead of useHistory
   const [showWellnessResorts, setShowWellnessResorts] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(null);
 
   const resorts = {
     india: [
-      { name: "Aayana Wellness", id: "https://www.ayanawellnessspa.com/" },
-      { name: "Ananda in the Himalayas", id: "https://www.anandaspa.com/" },
-      { name: "Shreyas Retreat", id: "https://www.shreyasretreat.com/" },
+      { name: "Aayana Wellness", id: "/india/aayana-wellness" },
+      { name: "Ananda in the Himalayas", id: "/india/ananda-in-the-himalayas" },
+      { name: "Shreyas Retreat", id: "/india/shreyas-retreat" },
     ],
     vietnam: [
-      { name: "Amanoi Resort", id: "https://www.aman.com/" },
-      { name: "Fusion Maia", id: "https://maiadanang.fusionresorts.com/" },
-      { name: "Six Senses Ninh Van Bay", id: "https://www.sixsenses.com/en/" }
+      { name: "Amanoi Resort", id: "/vietnam/amanoi-resort" },
+      { name: "Fusion Maia", id: "/vietnam/fusion-maia" },
+      { name: "Six Senses Ninh Van Bay", id: "/vietnam/six-senses-ninh-van-bay" },
     ],
     indonesia: [
-      { name: "The Wellness Haven Bali", id: "https://fivelementsbali.com/" },
-      { name: "Mandapa, a Ritz-Carlton Reserve", id: "https://www.ritzcarlton.com/" },
-      { name: "Fivelements Retreat Bali", id: "https://fivelementsbali.com/" },
+      { name: "The Wellness Haven Bali", id: "/indonesia/the-wellness-haven-bali" },
+      { name: "Mandapa, a Ritz-Carlton Reserve", id: "/indonesia/mandapa-a-ritz-carlton-reserve" },
+      { name: "Fivelements Retreat Bali", id: "/indonesia/fivelements-retreat-bali" },
     ],
     thailand: [
-      { name: "Chiva-Som", id: "https://www.chivasom.com/en/" },
-      { name: "Kamalaya", id: "https://kamalaya.com/" },
-      { name: "The Sanctuary Thailand", id: "https://www.thesanctuarythailand.com/" },
+      { name: "Chiva-Som", id: "/thailand/chiva-som" },
+      { name: "Kamalaya", id: "/thailand/kamalaya" },
+      { name: "The Sanctuary Thailand", id: "/thailand/the-sanctuary-thailand" },
     ],
     malaysia: [
-      { name: "The Andaman Resort", id: "https://the-andaman-langkawi.hotel-rez.com/" },
-      { name: "Shangri-La's Rasa Ria Resort", id: "https://www.shangri-la.com/kotakinabalu/rasariaresort/" },
-      { name: "Banyan Tree Lang Co", id: "https://www.banyantree.com/" },
+      { name: "The Andaman Resort", id: "/malaysia/the-andaman-resort" },
+      { name: "Shangri-La's Rasa Ria Resort", id: "/malaysia/shangri-las-resa-ria-resort" },
+      { name: "Banyan Tree Lang Co", id: "/malaysia/banyan-tree-lang-co" },
     ],
   };
 
@@ -60,8 +62,8 @@ const HeroSection = () => {
     {
       type: 'country',
       image: "/images/country2.jpg",
-      country: "Malaysia",
-      paragraph: "Breathe in the natural beauty and wellness of Malaysia.",
+      country: "Vietnam",
+      paragraph: "Breathe in the natural beauty and wellness of Vietnam.",
     },
     {
       type: 'wellness',
@@ -73,7 +75,7 @@ const HeroSection = () => {
     {
       type: 'country',
       image: "/images/country3.jpg",
-      country: "Thailand",
+      country: "Indonesia",
       paragraph: "Find your balance amidst the vibrant culture and serene landscapes.",
     },
     {
@@ -86,8 +88,8 @@ const HeroSection = () => {
     {
       type: 'country',
       image: "/images/country4.jpg",
-      country: "Vietnam",
-      paragraph: "Discover tranquility in Vietnam's breathtaking natural beauty.",
+      country: "Thailand",
+      paragraph: "Discover tranquility in Thailand's breathtaking natural beauty.",
     },
     {
       type: 'wellness',
@@ -99,13 +101,16 @@ const HeroSection = () => {
     {
       type: 'country',
       image: "/images/country5.jpg",
-      country: "Indonesia",
-      paragraph: "Unwind in Indonesia's beautiful resorts and wellness centers.",
+      country: "Malaysia",
+      paragraph: "Unwind in Malaysia's beautiful resorts and wellness centers.",
     },
   ];
 
   const handleCountryClick = (country) => {
     setSelectedCountry(selectedCountry === country ? null : country);
+    if (country) {
+      navigate(`/country/${country}`); // Using navigate for redirection
+    }
   };
 
   return (
@@ -161,7 +166,7 @@ const HeroSection = () => {
                   {selectedCountry === country && (
                     <div style={styles.resortList}>
                       {resorts[country].map((resort) => (
-                        <a key={resort.id} href={resort.id} target="_blank" rel="noopener noreferrer" style={styles.resortItem}>
+                        <a key={resort.name} href={resort.id} style={styles.resortItem}>
                           {resort.name}
                         </a>
                       ))}
@@ -219,9 +224,7 @@ const renderSlide = (slide, index) => (
     )}
     {slide.type === 'country' && (
       <div style={styles.overlayText}>
-        <a href={`/country/${slide.country.toLowerCase()}`} style={styles.countryLink}>
-          <h2 style={styles.countryOverlayHeading}>{slide.country}</h2>
-        </a>
+        <h2 style={styles.countryOverlayHeading}>{slide.country}</h2>
         <p style={styles.countryOverlayParagraph}>{slide.paragraph}</p>
       </div>
     )}
@@ -370,27 +373,6 @@ const styles = {
     left: "20px",
     color: "#fff",
     textAlign: "left",
-  },
-  countryLink: {
-    textDecoration: "none",
-    color: "#fff",
-  },
-  overlayHeading: {
-    fontSize: "2rem",
-    fontWeight: "bold",
-    color: "#fff",
-    marginBottom: "10px",
-  },
-  overlayParagraph: {
-    fontSize: "1.2rem",
-    marginTop: "10px",
-    color: "#fff",
-  },
-  overlaySubText: {
-    fontSize: "1rem",
-    marginTop: "10px",
-    fontStyle: "italic",
-    color: "#fff",
   },
   countryOverlayHeading: {
     fontSize: "2rem",
